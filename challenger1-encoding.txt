@@ -1,0 +1,150 @@
+; int __cdecl CheckPassd(char *)
+CheckPassd proc near
+
+		var_38= dword ptr -38h
+		var_34= dword ptr -34h
+		var_30= dword ptr -30h
+		var_2C= byte ptr -2Ch
+		var_2B= byte ptr -2Bh
+		var_2A= byte ptr -2Ah
+		var_29= byte ptr -29h
+		...
+  		
+		push	ebp
+  		mov	ebp,esp
+  		sub	esp,00000038h
+  		mov	eax,[L00403004]
+  		xor	eax,ebp
+  		mov	[ebp-04h],eax
+  		mov	byte ptr [ebp-2Ch],8Ch
+  		mov	byte ptr [ebp-2Bh],F1h
+  		mov	byte ptr [ebp-2Ah],53h
+  		mov	byte ptr [ebp-29h],A3h
+  		mov	byte ptr [ebp-28h],08h
+  		mov	byte ptr [ebp-27h],D7h
+  		mov	byte ptr [ebp-26h],DCh
+  		mov	byte ptr [ebp-25h],48h
+  		mov	byte ptr [ebp-24h],DBh
+  		mov	byte ptr [ebp-23h],0Ch
+  		mov	byte ptr [ebp-22h],3Ah
+  		mov	byte ptr [ebp-21h],EEh
+  		mov	byte ptr [ebp-20h],15h
+  		mov	byte ptr [ebp-1Fh],22h
+  		mov	byte ptr [ebp-1Eh],C4h
+  		mov	byte ptr [ebp-1Dh],E5h
+  		mov	byte ptr [ebp-1Ch],C9h
+  		mov	byte ptr [ebp-1Bh],A0h
+  		mov	byte ptr [ebp-1Ah],A5h
+  		mov	byte ptr [ebp-19h],0Ch
+  		mov	byte ptr [ebp-18h],D3h
+  		mov	byte ptr [ebp-17h],DCh
+  		mov	byte ptr [ebp-16h],51h
+  		mov	byte ptr [ebp-15h],C7h
+  		mov	byte ptr [ebp-14h],39h
+  		mov	byte ptr [ebp-13h],FDh
+  		mov	byte ptr [ebp-12h],D0h
+  		mov	byte ptr [ebp-11h],F8h
+  		mov	byte ptr [ebp-10h],3Bh
+  		mov	byte ptr [ebp-0Fh],E8h
+  		mov	byte ptr [ebp-0Eh],CCh
+  		mov	byte ptr [ebp-0Dh],03h
+  		mov	byte ptr [ebp-0Ch],06h
+  		mov	byte ptr [ebp-0Bh],43h
+  		mov	byte ptr [ebp-0Ah],F7h
+  		mov	byte ptr [ebp-09h],DAh
+  		mov	byte ptr [ebp-08h],7Eh
+  		mov	byte ptr [ebp-07h],65h
+  		mov	byte ptr [ebp-06h],AEh
+  		mov	byte ptr [ebp-05h],80h
+  		mov	eax,[ebp+08h]
+  		push	eax
+  		call	[api-ms-win-crt-string-l1-1-0.dll!strlen]
+  		add	esp,00000004h
+  		cmp	eax,00000010h
+  		jnz	L00401361
+  		mov	dword ptr [ebp-38h],00000000h
+  		mov	dword ptr [ebp-34h],00000000h
+  		jmp	L0040128F
+ L00401286:
+  		mov	ecx,[ebp-34h]
+  		add	ecx,00000001h
+  		mov	[ebp-34h],ecx
+ L0040128F:
+  		cmp	dword ptr [ebp-34h],00000028h
+  		jge	L0040135D
+  		mov	dword ptr [ebp-30h],00000000h
+  		mov	edx,[ebp+08h]
+  		add	edx,[ebp-34h]
+  		movsx	eax,[edx]
+  		xor	eax,00000033h
+  		and	eax,000000FFh
+  		mov	[ebp-30h],eax
+  		call	SUB_L00401130
+  		movzx	ecx,al
+  		test	ecx,ecx
+  		jz 	L004012C7
+  		xor	al,al
+  		jmp	L00401363
+ L004012C7:
+  		mov	edx,[ebp-30h]
+  		add	edx,00000044h
+  		and	edx,000000FFh
+  		mov	[ebp-30h],edx
+  		call	SUB_L00401160
+  		movzx	eax,al
+  		test	eax,eax
+  		jz 	L004012E6
+  		xor	al,al
+  		jmp	L00401363
+ L004012E6:
+  		mov	ecx,[ebp-30h]
+  		xor	ecx,00000055h
+  		and	ecx,000000FFh
+  		mov	[ebp-30h],ecx
+  		call	SUB_L00401190
+  		movzx	edx,al
+  		test	edx,edx
+  		jz 	L00401305
+  		xor	al,al
+  		jmp	L00401363
+ L00401305:
+  		mov	eax,[ebp-30h]
+  		sub	eax,00000066h
+  		and	eax,000000FFh
+  		mov	[ebp-30h],eax
+  		call	SUB_L00401100
+  		movzx	ecx,al
+  		test	ecx,ecx
+  		jz 	L00401323
+  		xor	al,al
+  		jmp	L00401363
+ L00401323:
+  		mov	edx,[ebp-38h]
+  		and	edx,000000FFh
+  		xor	edx,[ebp-30h]
+  		and	edx,000000FFh
+  		mov	[ebp-30h],edx
+  		mov	eax,[ebp-34h]
+  		movsx	ecx,[ebp+eax-2Ch]
+  		and	ecx,000000FFh
+  		cmp	[ebp-30h],ecx
+  		jz 	L0040134F
+  		xor	al,al
+  		jmp	L00401363
+ L0040134F:
+  		mov	edx,[ebp-38h]
+  		add	edx,[ebp-30h]
+  		mov	[ebp-38h],edx
+  		jmp	L00401286
+ L0040135D:
+  		mov	al,01h
+  		jmp	L00401363
+ L00401361:
+  		xor	al,al
+ L00401363:
+  		mov	ecx,[ebp-04h]
+  		xor	ecx,ebp
+  		call	SUB_L00401405
+  		mov	esp,ebp
+  		pop	ebp
+  		retn
